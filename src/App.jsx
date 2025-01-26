@@ -60,6 +60,18 @@ function App() {
               setNumAllowed((prev)=>!prev)
             }}
           />
+          <label className="text-white">Numbers</label>
+         </div>
+         <div className="flex items-center gap-x-1">
+          <input
+            type="checkbox"
+            defaultChecked={char}
+            id="characters allowed"
+            onChange={()=>{
+              setChar((prev)=>!prev)
+            }}
+          />
+          <label className="text-white">Characters</label>
          </div>
       </div>
     </div>
