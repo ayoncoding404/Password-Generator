@@ -24,7 +24,7 @@ function App() {
     <div className="w-full max-w-md mx-auto shadow-md rounded-lg px-4 py-3 my-8 bg-gray-800">
       <h1 className="text-white text-4xl text-center">Password Generator</h1>
       <div
-        className="w-full max-w-md mx-auto shadow-md rounded-lg px-4 my-8 text-white
+        className=" w-full max-w-md mx-auto shadow-md rounded-lg px-4 my-8 text-white
       bg-gray-700 text-center"
       >
         <div className="flex shadow rounded-lg overflow-hidden mb-4">
@@ -35,10 +35,33 @@ function App() {
             placeholder="password"
             readOnly
           />
+           <button className="outline-none bg-blue-500 text-white px-3 py-0.5 shrink-0 rounded-md text-center"> Copy</button>
         </div>
-        
+      
       </div>
-      <button className="outline-none bg-blue-500 text-white px-3 py-0.5 shrink-0 rounded-md text-center"> Copy</button>
+      <div className="flex text-sm gap-x-2">
+         <div className="flex items-center gap-x-1">
+          <input
+            type="range"
+            min={6}
+            max={100}
+            value={length}
+            className="cursor-pointer"
+            onChange={(e)=>{setLength(e.target.value)}} //bujhinai
+           />
+           <label className="text-white">Length : {length}</label>
+         </div>
+         <div className="flex items-center gap-x-1">
+          <input
+            type="checkbox"
+            defaultChecked={numAllowed}
+            id="number allowed"
+            onChange={()=>{
+              setNumAllowed((prev)=>!prev)
+            }}
+          />
+         </div>
+      </div>
     </div>
   );
 }
