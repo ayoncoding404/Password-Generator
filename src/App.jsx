@@ -36,7 +36,9 @@ function App() {
             readOnly
           />
         </div>
+        
       </div>
+      <button className="outline-none bg-blue-500 text-white px-3 py-0.5 shrink-0 rounded-md text-center"> Copy</button>
     </div>
   );
 }
